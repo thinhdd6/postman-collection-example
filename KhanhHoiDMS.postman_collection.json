@@ -1,0 +1,354 @@
+{
+	"info": {
+		"_postman_id": "3f223e80-4f01-4a5d-b7aa-0e70e5b4b117",
+		"name": "KhanhHoiDMS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15075395"
+	},
+	"item": [
+		{
+			"name": "Warehouse",
+			"item": [
+				{
+					"name": "getProductOutbound",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"\r",
+									"pm.test(\"get Product outbound pagesize is 3:  \", function() {\r",
+									"    let data = pm.response.json();\r",
+									"    pm.response.to.have.status(pm.iterationData.get('expectStatus'));\r",
+									"    console.log();\r",
+									"\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://gateway-website-dms.khanhhoidms.com/api/warehouse/productoutbound/getproductoutboundpaging?PageNumber={{pagenumber}}&PageSize={{pagesize}}",
+							"protocol": "https",
+							"host": [
+								"gateway-website-dms",
+								"khanhhoidms",
+								"com"
+							],
+							"path": [
+								"api",
+								"warehouse",
+								"productoutbound",
+								"getproductoutboundpaging"
+							],
+							"query": [
+								{
+									"key": "PageNumber",
+									"value": "{{pagenumber}}"
+								},
+								{
+									"key": "PageSize",
+									"value": "{{pagesize}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "get list customers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://gateway-website-dms.khanhhoidms.com/api/general/customerinformation/getlistcustomer?page=1&size=10",
+					"protocol": "https",
+					"host": [
+						"gateway-website-dms",
+						"khanhhoidms",
+						"com"
+					],
+					"path": [
+						"api",
+						"general",
+						"customerinformation",
+						"getlistcustomer"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "size",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get purchase order",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "12571",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://gateway-website-dms.khanhhoidms.com/api/shippingorder/purchaseorders?PageNumber=1&Pagesize=1",
+					"protocol": "https",
+					"host": [
+						"gateway-website-dms",
+						"khanhhoidms",
+						"com"
+					],
+					"path": [
+						"api",
+						"shippingorder",
+						"purchaseorders"
+					],
+					"query": [
+						{
+							"key": "PageNumber",
+							"value": "1"
+						},
+						{
+							"key": "Pagesize",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get product outbound",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://gateway-website-dms.khanhhoidms.com/api/warehouse/productoutbound/getproductoutboundpaging?PageNumber=1&PageSize=5",
+					"protocol": "https",
+					"host": [
+						"gateway-website-dms",
+						"khanhhoidms",
+						"com"
+					],
+					"path": [
+						"api",
+						"warehouse",
+						"productoutbound",
+						"getproductoutboundpaging"
+					],
+					"query": [
+						{
+							"key": "PageNumber",
+							"value": "1"
+						},
+						{
+							"key": "PageSize",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get purchase order fill ful opt",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"pageNumber\":1,\"pageSize\":10}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://gateway-website-dms.khanhhoidms.com/api/shippingorder/purchaseorders/purchaseorderfilterfullopt",
+					"protocol": "https",
+					"host": [
+						"gateway-website-dms",
+						"khanhhoidms",
+						"com"
+					],
+					"path": [
+						"api",
+						"shippingorder",
+						"purchaseorders",
+						"purchaseorderfilterfullopt"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get human resource",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://gateway-website-dms.khanhhoidms.com/api/organization/humanresource/getall",
+					"protocol": "https",
+					"host": [
+						"gateway-website-dms",
+						"khanhhoidms",
+						"com"
+					],
+					"path": [
+						"api",
+						"organization",
+						"humanresource",
+						"getall"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get products",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://gateway-website-dms.khanhhoidms.com/api/general/products?productCode=CHL HỘP",
+					"protocol": "https",
+					"host": [
+						"gateway-website-dms",
+						"khanhhoidms",
+						"com"
+					],
+					"path": [
+						"api",
+						"general",
+						"products"
+					],
+					"query": [
+						{
+							"key": "productCode",
+							"value": "CHL HỘP"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all sale routes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://gateway-website-dms.khanhhoidms.com/api/general/saleroute/getallsaleroute",
+					"protocol": "https",
+					"host": [
+						"gateway-website-dms",
+						"khanhhoidms",
+						"com"
+					],
+					"path": [
+						"api",
+						"general",
+						"saleroute",
+						"getallsaleroute"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all main menu",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://gateway-website-dms.khanhhoidms.com/api/accessmanagement/mainmenu/getallmainmenu",
+					"protocol": "https",
+					"host": [
+						"gateway-website-dms",
+						"khanhhoidms",
+						"com"
+					],
+					"path": [
+						"api",
+						"accessmanagement",
+						"mainmenu",
+						"getallmainmenu"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "pagenumber",
+			"value": "1",
+			"type": "string"
+		},
+		{
+			"key": "pagesize",
+			"value": "2",
+			"type": "string"
+		}
+	]
+}
