@@ -67,7 +67,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://gateway-website-dms.khanhhoidms.com/api/general/customerinformation/getlistcustomer?page=1&size=10",
+					"raw": "https://gateway-website-dms.khanhhoidms.com/api/general/customerinformation/getlistcustomer?page=3&size=2",
 					"protocol": "https",
 					"host": [
 						"gateway-website-dms",
