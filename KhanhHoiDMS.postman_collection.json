@@ -67,7 +67,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://gateway-website-dms.khanhhoidms.com/api/general/customerinformation/getlistcustomer?page=3&size=2",
+					"raw": "https://gateway-website-dms.khanhhoidms.com/api/general/customerinformation/getlistcustomer?page=1&size=10",
 					"protocol": "https",
 					"host": [
 						"gateway-website-dms",
@@ -250,7 +250,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://gateway-website-dms.khanhhoidms.com/api/general/products?productCode=CHL HỘP",
+					"raw": "https://gateway-website-dms.khanhhoidms.com/api/general/products",
 					"protocol": "https",
 					"host": [
 						"gateway-website-dms",
@@ -261,12 +261,6 @@
 						"api",
 						"general",
 						"products"
-					],
-					"query": [
-						{
-							"key": "productCode",
-							"value": "CHL HỘP"
-						}
 					]
 				}
 			},
